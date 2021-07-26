@@ -1,10 +1,11 @@
 package cn.cmaple.mainsver.controller;
 
+import cn.cmaple.mainsver.service.BasicService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -16,8 +17,11 @@ import java.util.Map;
  * @since JDK1.8 及 更高
  */
 @RestController
-@RequestMapping("/Basic")
+@RequestMapping("/basic")
 public class BasicController {
+
+    @Autowired
+    private BasicService basicService;
 
     /**
      * @Title: HeadlineNews
@@ -28,12 +32,7 @@ public class BasicController {
      * @date 2021/7/23 下午1:51
      */
     @RequestMapping(value = "/headline", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public Map<String, Object> HeadlineNews(){
-        //返回参数初始化
-        Map<String, Object> map = new HashMap<String, Object>();
-
-
-
-        return map;
+    public Map<String, Object> HeadlineNews() throws Exception {
+        return  basicService.getheadlineNews();
     }
 }
