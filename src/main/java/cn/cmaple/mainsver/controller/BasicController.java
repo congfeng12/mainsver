@@ -27,12 +27,51 @@ public class BasicController {
      * @Title: HeadlineNews
      * @Description 主页头条位置信息获取函数，获取内容为：图片链接、标题文字、详细内容链接地址、返回结果标记、返回结果说明
      * @return Map<String, Object>
-     * @throws null
+     * @throws Exception
      * @author CMAPLE
      * @date 2021/7/23 下午1:51
      */
     @RequestMapping(value = "/headline", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public Map<String, Object> HeadlineNews() throws Exception {
-        return  basicService.getheadlineNews();
+    public Map<String, Object> selectheadlineNews() throws Exception {
+        return  basicService.selectheadlineNews();
+    }
+    
+    /**
+     * @Title: getContributionInfo
+     * @Description 关于页面团队贡献等信息获取函数，获取内容：管理团队、合作贡献、投资等内容信息
+     * @return Map<String, Object>
+     * @throws Exception
+     * @author CMAPLE
+     * @date 2021/8/11 下午1:38
+     */
+    @RequestMapping(value = "/contributionInfo", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public Map<String, Object> selectContributionInfo() throws Exception {
+        return  basicService.selectContributionInfo();
+    }
+    
+    /**
+     * @Title: selectCases
+     * @Description 服务页面案例信息获取函数，获取内容：名称、图片地址、域名地址、说明信息
+     * @return Map<String, Object>
+     * @throws Exception
+     * @author CMAPLE
+     * @date 2021/8/11 下午3:29
+     */
+    @RequestMapping(value = "/cases", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public Map<String, Object> selectCases() throws Exception {
+        return  basicService.selectCases();
+    }
+
+    /**
+     * @Title: selectPrograms
+     * @Description 服务页面项目信息获取函数，获取内容：名称，版本，类型，域名地址，更新时间
+     * @return Map<String, Object>
+     * @throws Exception
+     * @author CMAPLE
+     * @date 2021/8/11 下午3:41
+     */
+    @RequestMapping(value = "/programs", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public Map<String, Object> selectPrograms() throws Exception {
+        return  basicService.selectPrograms();
     }
 }

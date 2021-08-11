@@ -15,13 +15,13 @@ public class BasicSql {
 
     /**
      * @Title: getheadlineNews
-     * @Description //TODO
-     * @return     返回类型 
+     * @Description 获取主页内容信息的sql语句
+     * @return String
      * @throws 
      * @author CMAPLE
      * @date 2021/7/26 下午1:56
      */
-    public String getheadlineNews() {
+    public String selectheadlineNews() {
         String result = new SQL() {
             {
                 SELECT("id ,headlineId ,title ,imgURL ,informationURL");
@@ -32,4 +32,66 @@ public class BasicSql {
         result = SqlTool.getSqlTool().sqlPutDescOrderBy(result, "id");
         return result;
     }
+    
+    /**
+     * @Title: getContributionInfo
+     * @Description 获取关于页面，管理团队、合作贡献、投资信息的sql语句
+     * @return String
+     * @throws 
+     * @author CMAPLE
+     * @date 2021/8/11 下午1:18
+     */
+    public String selectContributionInfo(){
+        String result = new SQL() {
+            {
+                SELECT("id ,type ,name ,position ,introduce");
+                FROM("BS_About ");
+            }
+        }.toString();
+        //添加排序
+        result = SqlTool.getSqlTool().sqlPutOrderBy(result, "id");
+        return result;
+    }
+
+    /**
+     * @Title: getheadlineNews
+     * @Description 获取服务页面案例信息的sql语句
+     * @return String
+     * @throws
+     * @author CMAPLE
+     * @date 2021/7/26 下午1:56
+     */
+    public String selectCases() {
+        String result = new SQL() {
+            {
+                SELECT("id ,title ,imgurl ,domain_name ,info");
+                FROM("BS_Cases ");
+            }
+        }.toString();
+        //添加排序
+        result = SqlTool.getSqlTool().sqlPutOrderBy(result, "id");
+        return result;
+    }
+
+    /**
+     * @Title: getheadlineNews
+     * @Description 获取服务页面项目信息的sql语句
+     * @return String
+     * @throws
+     * @author CMAPLE
+     * @date 2021/7/26 下午1:56
+     */
+    public String selectPrograms() {
+        String result = new SQL() {
+            {
+                SELECT("id ,title ,version ,type ,domain_name ,uptime");
+                FROM("BS_Programs ");
+            }
+        }.toString();
+        //添加排序
+        result = SqlTool.getSqlTool().sqlPutOrderBy(result, "id");
+        return result;
+    }
+
+
 }
