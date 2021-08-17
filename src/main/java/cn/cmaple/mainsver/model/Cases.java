@@ -51,7 +51,7 @@ public class Cases {
      * 长度：125
      * 是否为null：N
      **/
-    private String domain_name;
+    private String domainname;
 
     /**
      * 案例描述

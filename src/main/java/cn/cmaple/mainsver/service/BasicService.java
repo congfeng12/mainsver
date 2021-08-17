@@ -57,7 +57,7 @@ public class BasicService{
         for (About a : abouts){
             if (1 == a.getType()){
                 teams.add(a);
-            } else if (1 == a.getType()){
+            } else if (2 == a.getType()){
                 contributions.add(a);
             } else {
                 investments.add(a);

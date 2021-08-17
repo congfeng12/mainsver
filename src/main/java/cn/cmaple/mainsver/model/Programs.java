@@ -60,7 +60,7 @@ public class Programs {
      * 长度：125
      * 是否为null：N
      **/
-    private String domain_name;
+    private String domainname;
 
     /**
      * 项目开发更新时间

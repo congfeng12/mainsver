@@ -44,7 +44,7 @@ public class BasicSql {
     public String selectCases() {
         String result = new SQL() {
             {
-                SELECT("id ,title ,imgurl ,domain_name ,info");
+                SELECT("id ,title ,imgurl ,domainname ,info");
                 FROM("BS_Cases ");
             }
         }.toString();
@@ -64,7 +64,7 @@ public class BasicSql {
     public String selectPrograms() {
         String result = new SQL() {
             {
-                SELECT("id ,title ,version ,type ,domain_name ,uptime");
+                SELECT("id ,title ,version ,type ,domainname ,uptime");
                 FROM("BS_Programs ");
             }
         }.toString();
