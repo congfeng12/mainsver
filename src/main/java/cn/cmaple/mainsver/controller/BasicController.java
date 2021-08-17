@@ -22,19 +22,6 @@ public class BasicController {
 
     @Autowired
     private BasicService basicService;
-
-    /**
-     * @Title: HeadlineNews
-     * @Description 主页头条位置信息获取函数，获取内容为：图片链接、标题文字、详细内容链接地址、返回结果标记、返回结果说明
-     * @return Map<String, Object>
-     * @throws Exception
-     * @author CMAPLE
-     * @date 2021/7/23 下午1:51
-     */
-    @RequestMapping(value = "/headline", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public Map<String, Object> selectheadlineNews() throws Exception {
-        return  basicService.selectheadlineNews();
-    }
     
     /**
      * @Title: getContributionInfo

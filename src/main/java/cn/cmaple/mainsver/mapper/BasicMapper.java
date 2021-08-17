@@ -2,7 +2,6 @@ package cn.cmaple.mainsver.mapper;
 
 import cn.cmaple.mainsver.mapper.AdvancedSQL.BasicSql;
 import cn.cmaple.mainsver.model.About;
-import cn.cmaple.mainsver.model.Basic;
 import cn.cmaple.mainsver.model.Cases;
 import cn.cmaple.mainsver.model.Programs;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
@@ -18,17 +17,7 @@ import java.util.List;
  * @Version 1.0
  * @since JDK1.8 及 更高
  */
-public interface BasicMapper extends BaseMapper<Basic> {
-
-    /**
-     * @Title: headlineNews
-     * @Description 主页头条位置信息获取接口映射，获取内容为：图片链接、标题文字、详细内容链接地址
-     * @return   List<Basic>
-     * @author CMAPLE
-     * @date 2021/7/26 下午1:50
-     */
-    @SelectProvider(type = BasicSql.class, method = "selectheadlineNews")
-    List<Basic> selectheadlineNews();
+public interface BasicMapper extends BaseMapper {
 
     /**
      * @Title: getContributionInfo

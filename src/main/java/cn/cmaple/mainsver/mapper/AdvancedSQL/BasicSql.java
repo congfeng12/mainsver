@@ -12,26 +12,6 @@ import org.apache.ibatis.jdbc.SQL;
  * @since JDK1.8 及 更高
  */
 public class BasicSql {
-
-    /**
-     * @Title: getheadlineNews
-     * @Description 获取主页内容信息的sql语句
-     * @return String
-     * @throws 
-     * @author CMAPLE
-     * @date 2021/7/26 下午1:56
-     */
-    public String selectheadlineNews() {
-        String result = new SQL() {
-            {
-                SELECT("id ,headlineId ,title ,imgURL ,informationURL");
-                FROM("BS_Headline ");
-            }
-        }.toString();
-        //添加排序
-        result = SqlTool.getSqlTool().sqlPutDescOrderBy(result, "id");
-        return result;
-    }
     
     /**
      * @Title: getContributionInfo
