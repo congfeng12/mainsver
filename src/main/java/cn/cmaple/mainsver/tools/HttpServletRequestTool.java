@@ -63,6 +63,9 @@ public class HttpServletRequestTool {
         if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
             ip = request.getRemoteAddr();
         }
+        if (null != request.getParameter("uip")){
+            ip = request.getParameter("uip");
+        }
         return ip;
     }
 

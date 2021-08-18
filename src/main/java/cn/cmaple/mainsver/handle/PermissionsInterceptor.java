@@ -32,10 +32,10 @@ public class PermissionsInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object object) throws Exception {
-        //参数判断处理
+        // 账户参数判断处理
         String user = HttpServletRequestTool.getHttpServletRequestToolExample().getIpAddgetRequestUser(httpServletRequest);
         String in_user = (user == null) ? "游客账号" : user;
-        //记录日志
+        // 记录日志
         operationLogService.insert(new OperationLog(0
                 , "HC" + FormatTime.getFormatTime().formatYMDToString(new Date()) + "-" + RandomData.getRandomData().getRandomNHData(6)
                 , new Date(), HttpServletRequestTool.getHttpServletRequestToolExample().getIpAddgetRequestUser(httpServletRequest)
