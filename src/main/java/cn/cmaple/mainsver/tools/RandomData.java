@@ -83,7 +83,7 @@ public class RandomData {
     }
 
     /**
-     * 函数名：随机数函数-获取随机数 - getRandomCHData（）
+     * 函数名：随机数函数-获取随机数 - getRandomNHData（）
      * 功能描述：
      * 输入参数：<按照参数定义顺序>
      *
