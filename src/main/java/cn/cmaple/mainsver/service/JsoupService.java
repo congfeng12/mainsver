@@ -47,7 +47,7 @@ public class JsoupService {
      * @date 2021/12/22 下午14:19
      */
     public void JsoupNews() {
-        System.out.println("INFO - " + LocalDateTime.now() + "... 开始抓取网站数据！");
+        System.out.println("INFO - " + LocalDateTime.now() + "... 开始抓取zaker新闻网站数据！");
         List<Article> articles = new ArrayList<Article>();
         try {
             Document html = Jsoup.connect(config.getNEWS_URLS()).get();
@@ -67,28 +67,31 @@ public class JsoupService {
                     try {
                         // 获取相应新闻网站内容
                         a_html = Jsoup.connect(article.getUrl()).get();
-                    } catch (IOException e) {
-                        System.out.println("ERROR - " + LocalDateTime.now() + "请求独立新闻页面异常 - " + e.getMessage());
+                        // 获取新闻内容
+                        Element element_con = a_html.getElementById("content");
+                        article.setContent(element_con.toString());
+                        // 获取新闻作者
+                        Elements elementart = a_html.getElementsByClass("article-auther line");
+                        article.setAuthor(elementart.get(0).text());
+                        System.out.println("INFO - " + LocalDateTime.now() + "新闻信息整理完成索引 - " + article.getTitle());
+                        articleMapper.insert(article);
+                    } catch (Exception e) {
+                        System.out.println("ERROR - " + LocalDateTime.now() + " - 请求zaker新闻独立新闻页面异常 - " + article.getTitle() + " - " + e.toString());
                     }
-                    // 获取新闻内容
-                    Element element_con = a_html.getElementById("content");
-                    article.setContent(element_con.toString());
-                    // 获取新闻作者
-                    Elements elementart = a_html.getElementsByClass("article-auther line");
-                    article.setAuthor(elementart.get(0).text());
-                    System.out.println("INFO - " + LocalDateTime.now() + "新闻信息整理完成索引 - " + article.getAid());
-                    articleMapper.insert(article);
                 } else {
-                    System.out.println("INFO - " + LocalDateTime.now() + "相同数据不做处理！");
+                    System.out.println("INFO - " + LocalDateTime.now() + " - 相同数据不做处理！" + " - " + article.getTitle());
                 }
             }
-            System.out.println("INFO - " + LocalDateTime.now() + "... 完成抓取网站数据！");
+            System.out.println("INFO - " + LocalDateTime.now() + "... 完成抓取zaker新闻网站数据！");
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("ERROR - " + LocalDateTime.now() + "请求头条页面异常 - " + e.getMessage());
+            System.out.println("ERROR - " + LocalDateTime.now() + "请求zaker新闻头条页面异常 - " + e.toString());
         } catch (InterruptedException e) {
             e.printStackTrace();
-            System.out.println("ERROR - " + LocalDateTime.now() + "线程睡眠异常 - " + e.getMessage());
+            System.out.println("ERROR - " + LocalDateTime.now() + "线程睡眠异常 - " + e.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("ERROR - " + LocalDateTime.now() + "其他异常 - " + e.toString());
         }
     }
 }

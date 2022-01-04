@@ -30,7 +30,7 @@ public class BasicService{
     private BasicMapper basicMapper;
 
     /**
-     * @Title: getContributionInfo
+     * @Title: selectContributionInfo
      * @Description 关于页面团队贡献等信息获取函数，获取内容：管理团队、合作贡献、投资等内容信息
      * @return Map<String, Object>
      * @throws Exception

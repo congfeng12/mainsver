@@ -72,6 +72,4 @@ public class BasicSql {
         result = SqlTool.getSqlTool().sqlPutOrderBy(result, "id");
         return result;
     }
-
-
 }

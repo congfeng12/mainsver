@@ -17,14 +17,14 @@ import org.springframework.scheduling.annotation.Scheduled;
 @Configuration      //1.主要用于标记配置类，兼备Component的效果。
 @EnableScheduling   // 2.开启定时任务
 public class TimerConfig {
-    // 引入证书工具类
+    // 引入爬虫服务类
     @Autowired
     private JsoupService jsoupService;
 
     //3.添加定时任务(每天5点钟执行)
     //@Scheduled(cron = "0 0 5 * * ?")
     // 每隔2个小时执行一次
-    @Scheduled(fixedRate = (1000 * 60 * 60 * 2))
+    @Scheduled(fixedRate = (1000 * 60 * 60 * 5))
     private void configureTasks() {
         // 抓取新闻信息
         jsoupService.JsoupNews();
