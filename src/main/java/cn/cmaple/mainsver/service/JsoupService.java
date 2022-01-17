@@ -53,7 +53,7 @@ public class JsoupService {
             Document html = Jsoup.connect(config.getNEWS_URLS()).get();
             Elements elements = html.getElementsByClass("carousel-inner").select("a.carousel");
             for (Element element : elements) {
-                articles.add(new Article(0, RandomData.getRandomData().getRandomNHData(6), "0", "congfeng12@163.com", element.attr("title"), "", "http:" + element.attr("href"), new Date(), ""));
+                articles.add(new Article(0, RandomData.getRandomData().getRandomNHData(6), "5", "congfeng12@163.com", element.attr("title"), "", "http:" + element.attr("href"), new Date(), ""));
                 System.out.println("INFO - " + LocalDateTime.now() + "获取头条标题 - " + element.attr("title"));
             }
             // 数据处理

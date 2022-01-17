@@ -25,12 +25,12 @@ public class PlatformController {
     private ArticleService articleService;
 
     /**
-     * @Title: selectArticles
-     * @Description 获取帖子列表（懒加载模式）ID、帖子ID、帖子类型、帖子发布者、帖子标题、帖子作者、帖子创建时间
      * @param page String类型的用户名
      * @param num  String类型的用户密码
      * @return Map<String, Object>
      * @throws Exception
+     * @Title: selectArticles
+     * @Description 获取帖子列表（懒加载模式）ID、帖子ID、帖子类型、帖子发布者、帖子标题、帖子作者、帖子创建时间
      * @author CMAPLE
      * @date 2021/12/30 14：16
      */
@@ -39,6 +39,6 @@ public class PlatformController {
             @RequestParam(value = "page", required = true) int page
             , @RequestParam(value = "num", required = true) int num
     ) throws Exception {
-        return  articleService.selectArticles();
+        return articleService.selectArticles(page, num);
     }
 }
