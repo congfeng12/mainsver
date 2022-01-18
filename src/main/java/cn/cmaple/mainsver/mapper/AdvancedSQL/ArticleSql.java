@@ -8,9 +8,9 @@ import java.util.Map;
 
 /**
  * 类名：帖子类复杂sql拼接类 - ArticleSql
- * 功能描述：NULL
+ * 功能描述：帖子类复杂sql拼接
  * 创建人：CMAPLE
- * 创建日期：2019-12-17
+ * 创建日期：2021-12-22
  *
  * @Version 1.0
  * @since JDK1.8 及 更高

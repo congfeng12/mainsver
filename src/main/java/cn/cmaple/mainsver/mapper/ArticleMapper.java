@@ -21,7 +21,7 @@ import java.util.Map;
 public interface ArticleMapper extends BaseMapper<Article> {
 
     /**
-     * 函数名：语句拼接函数-根据条件获取相应帖子- selectArticles（）
+     * 函数名：查询函数-根据条件获取相应帖子- selectArticles（）
      * 功能描述： 根据条件获取帖子列表（分页查询）ID、帖子ID、帖子类型、帖子发布者、帖子标题、帖子作者、帖子创建时间
      * 输入参数：<按照参数定义顺序>
      *
@@ -37,7 +37,7 @@ public interface ArticleMapper extends BaseMapper<Article> {
     List<Article> selectArticles(@Param("params") Map<String, Object> params, @Param("page") int page, @Param("num") int num);
 
     /**
-     * 函数名：语句拼接函数-按照条件并根据id获取相应帖子- selectArticlesOrderByDescID（）
+     * 函数名：查询函数-按照条件并根据id获取相应帖子- selectArticlesOrderByDescID（）
      * 功能描述： 按照条件并根据id获取最新的帖子信息（分页查询）ID、帖子ID、帖子类型、帖子发布者、帖子标题、帖子作者、帖子创建时间
      * 输入参数：<按照参数定义顺序>
      *

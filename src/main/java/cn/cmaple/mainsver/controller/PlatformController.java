@@ -1,5 +1,6 @@
 package cn.cmaple.mainsver.controller;
 
+import cn.cmaple.mainsver.annotation.UserLoginToken;
 import cn.cmaple.mainsver.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +35,7 @@ public class PlatformController {
      * @author CMAPLE
      * @date 2021/12/30 14：16
      */
+    @UserLoginToken
     @RequestMapping(value = "/articles", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public Map<String, Object> selectArticles(
             @RequestParam(value = "page", required = true) int page

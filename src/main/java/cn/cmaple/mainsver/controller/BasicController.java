@@ -1,5 +1,6 @@
 package cn.cmaple.mainsver.controller;
 
+import cn.cmaple.mainsver.annotation.PassToken;
 import cn.cmaple.mainsver.service.BasicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +32,7 @@ public class BasicController {
      * @author CMAPLE
      * @date 2021/8/11 下午1:38
      */
+    @PassToken
     @RequestMapping(value = "/contributionInfo", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public Map<String, Object> selectContributionInfo() throws Exception {
         return  basicService.selectContributionInfo();
@@ -44,6 +46,7 @@ public class BasicController {
      * @author CMAPLE
      * @date 2021/8/11 下午3:29
      */
+    @PassToken
     @RequestMapping(value = "/cases", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public Map<String, Object> selectCases() throws Exception {
         return  basicService.selectCases();
@@ -57,6 +60,7 @@ public class BasicController {
      * @author CMAPLE
      * @date 2021/8/11 下午3:41
      */
+    @PassToken
     @RequestMapping(value = "/programs", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public Map<String, Object> selectPrograms() throws Exception {
         return  basicService.selectPrograms();

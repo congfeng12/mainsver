@@ -4,24 +4,27 @@ import cn.cmaple.mainsver.tools.SqlTool;
 import org.apache.ibatis.jdbc.SQL;
 
 /**
- * @ClassName: BasicSql
- * @Description: 基础服务类复杂sql拼接类
- * @author: CMAPLE
- * @date 2021/7/26 下午1:45
+ * 类名：基础服务类复杂sql拼接类 - BasicSql
+ * 功能描述：基础服务类复杂sql拼接类
+ * 创建人：CMAPLE
+ * 创建日期：2021-07-26
+ *
  * @Version 1.0
  * @since JDK1.8 及 更高
  */
 public class BasicSql {
-    
+
     /**
-     * @Title: getContributionInfo
-     * @Description 获取关于页面，管理团队、合作贡献、投资信息的sql语句
-     * @return String
-     * @throws 
-     * @author CMAPLE
-     * @date 2021/8/11 下午1:18
+     * 函数名：语句拼接函数-获取关于页面，管理团队、合作贡献、投资信息的sql语句- selectContributionInfo（）
+     * 功能描述： 获取关于页面，管理团队、合作贡献、投资信息的sql语句
+     * 输入参数：<按照参数定义顺序>
+     * <p>
+     * 返回值：String
+     * 异    常：NULL
+     * 创建人：CMAPLE
+     * 日期：2021-08-11
      */
-    public String selectContributionInfo(){
+    public String selectContributionInfo() {
         String result = new SQL() {
             {
                 SELECT("id ,type ,name ,position ,introduce");
@@ -34,12 +37,14 @@ public class BasicSql {
     }
 
     /**
-     * @Title: getheadlineNews
-     * @Description 获取服务页面案例信息的sql语句
-     * @return String
-     * @throws
-     * @author CMAPLE
-     * @date 2021/7/26 下午1:56
+     * 函数名：语句拼接函数-获取服务页面案例信息的sql语句- selectCases（）
+     * 功能描述： 获取服务页面案例信息的sql语句
+     * 输入参数：<按照参数定义顺序>
+     * <p>
+     * 返回值：String
+     * 异    常：NULL
+     * 创建人：CMAPLE
+     * 日期：2021-07-26
      */
     public String selectCases() {
         String result = new SQL() {
@@ -52,14 +57,16 @@ public class BasicSql {
         result = SqlTool.getSqlTool().sqlPutOrderBy(result, "id");
         return result;
     }
-
+    
     /**
-     * @Title: getheadlineNews
-     * @Description 获取服务页面项目信息的sql语句
-     * @return String
-     * @throws
-     * @author CMAPLE
-     * @date 2021/7/26 下午1:56
+     * 函数名：语句拼接函数-获取服务页面项目信息的sql语句- selectPrograms（）
+     * 功能描述： 获取服务页面项目信息的sql语句
+     * 输入参数：<按照参数定义顺序>
+     * <p>
+     * 返回值：String
+     * 异    常：NULL
+     * 创建人：CMAPLE
+     * 日期：2021-07-26
      */
     public String selectPrograms() {
         String result = new SQL() {

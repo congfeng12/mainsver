@@ -12,10 +12,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @ClassName: ArticleService
- * @Description: 帖子服务类，用于处理相关帖子服务
- * @author: CMAPLE
- * @date 2021/12/30 13：48
+ * 类名：帖子服务类 - ArticleService
+ * 功能描述：帖子服务类，用于处理相关帖子服务
+ * 创建人：CMAPLE
+ * 创建日期：2021-12-31
+ *
  * @Version 1.0
  * @since JDK1.8 及 更高
  */
@@ -81,7 +82,7 @@ public class ArticleService {
             programs.addAll(news);
             programs.addAll(comms);
         } else {
-            // 第二页处理
+            // 第二页及以后处理
             // 增加：类型-交流
             params.put("atype", "6");
             // 查询案例信息(查询内容允许为空)

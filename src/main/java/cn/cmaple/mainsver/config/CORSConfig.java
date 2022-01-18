@@ -14,9 +14,6 @@ import org.springframework.web.filter.CorsFilter;
  * 异    常：无
  * 创建人：cmaple
  * 创建日期：2019-01-16
- * 修改人：
- * 级别：NULL
- * 修改日期：
  */
 @Configuration
 public class CORSConfig {

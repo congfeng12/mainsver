@@ -4,10 +4,11 @@ import cn.cmaple.mainsver.model.OperationLog;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
- * @ClassName: OperationLogMapper
- * @Description: 日志基础函数mapper映射接口
- * @author: CMAPLE
- * @date 2021/7/23 下午1:32
+ * 类名：帖子映射 - OperationLogMapper
+ * 功能描述：日志基础函数mapper映射接口
+ * 创建人：CMAPLE
+ * 创建日期：2021-7-23
+ *
  * @Version 1.0
  * @since JDK1.8 及 更高
  */
