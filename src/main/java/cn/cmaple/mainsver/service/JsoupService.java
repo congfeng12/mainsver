@@ -69,7 +69,8 @@ public class JsoupService {
                         a_html = Jsoup.connect(article.getUrl()).get();
                         // 获取新闻内容
                         Element element_con = a_html.getElementById("content");
-                        article.setContent(element_con.toString());
+                        String con = element_con.toString();
+                        article.setContent(con.replaceAll("data-original", "src").replaceAll("data-height","height").replaceAll("data-width","width"));
                         // 获取新闻作者
                         Elements elementart = a_html.getElementsByClass("article-auther line");
                         article.setAuthor(elementart.get(0).text());

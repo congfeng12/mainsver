@@ -162,8 +162,7 @@ public class PermissionsInterceptor implements HandlerInterceptor {
             }
 
         }
-        // 测试这里是false是否还可以使用
-        return false;
+        return true;
     }
 
     @Override

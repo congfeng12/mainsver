@@ -1,6 +1,5 @@
 package cn.cmaple.mainsver.controller;
 
-import cn.cmaple.mainsver.annotation.UserLoginToken;
 import cn.cmaple.mainsver.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,12 +34,29 @@ public class PlatformController {
      * @author CMAPLE
      * @date 2021/12/30 14：16
      */
-    @UserLoginToken
+//    @UserLoginToken
     @RequestMapping(value = "/articles", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public Map<String, Object> selectArticles(
             @RequestParam(value = "page", required = true) int page
             , @RequestParam(value = "num", required = true) int num
     ) throws Exception {
         return articleService.selectArticles(page, num);
+    }
+
+    /**
+     * @param id String类型的用户名
+     * @return Map<String, Object>
+     * @throws Exception
+     * @Title: selectArticles
+     * @Description 获取帖子信息（懒加载模式）ID、帖子ID、帖子类型、帖子发布者、帖子标题、帖子作者、帖子创建时间
+     * @author CMAPLE
+     * @date 2022/02/11
+     */
+//    @UserLoginToken
+    @RequestMapping(value = "/article", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public Map<String, Object> selectArticlesByID(
+            @RequestParam(value = "id", required = true) int id
+    ) throws Exception {
+        return articleService.selectArticlesByID(id);
     }
 }

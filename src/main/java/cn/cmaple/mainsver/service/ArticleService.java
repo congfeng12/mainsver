@@ -84,7 +84,7 @@ public class ArticleService {
         } else {
             // 第二页及以后处理
             // 增加：类型-交流
-            params.put("atype", "6");
+            params.put("atype", "5");
             // 查询案例信息(查询内容允许为空)
             programs = articleMapper.selectArticlesOrderByDescID(params, ParamsTools.getPageTools().getPageByNum(page, num), num);
         }
@@ -92,6 +92,30 @@ public class ArticleService {
         map.put("RTCODE", "success");
         map.put("RTMSG", "获取帖子列表成功！");
         map.put("RTDATA", programs);
+        return map;
+    }
+
+    /**
+     * 函数名：查询函数-根据条件获取相应帖子- selectArticlesByID（）
+     * 功能描述： 根据条件获取帖子列表（分页查询）ID、帖子ID、帖子类型、帖子发布者、帖子标题、帖子作者、帖子创建时间
+     * 输入参数：<按照参数定义顺序>
+     *
+     * @param id int类型的条件列表
+     *             返回值：Map<String, Object>
+     *             异    常：NULL
+     *             创建人：CMAPLE
+     *             日期：2022-02-11
+     */
+    public Map<String, Object> selectArticlesByID(int id) {
+        // 初始化返回结构体
+        Map<String, Object> map = new HashMap<>();
+        // 初始化返回内容
+        Article article = articleMapper.selectById(id);
+        article.setContent(article.getContent().replaceAll("data-original", "src").replaceAll("data-height","height").replaceAll("data-width","width"));
+        // 组装返回信息内容
+        map.put("RTCODE", "success");
+        map.put("RTMSG", "获取帖子成功！");
+        map.put("RTDATA", article);
         return map;
     }
 }
