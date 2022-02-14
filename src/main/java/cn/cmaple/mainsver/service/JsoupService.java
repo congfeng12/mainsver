@@ -69,8 +69,11 @@ public class JsoupService {
                         a_html = Jsoup.connect(article.getUrl()).get();
                         // 获取新闻内容
                         Element element_con = a_html.getElementById("content");
+                        for (Element e : element_con.getElementsByTag("img")){
+                            e.attr("data-width","800");
+                        }
                         String con = element_con.toString();
-                        article.setContent(con.replaceAll("data-original", "src").replaceAll("data-height","height").replaceAll("data-width","width"));
+                        article.setContent(con.replaceAll("data-original", "src").replaceAll("data-width", "width"));
                         // 获取新闻作者
                         Elements elementart = a_html.getElementsByClass("article-auther line");
                         article.setAuthor(elementart.get(0).text());

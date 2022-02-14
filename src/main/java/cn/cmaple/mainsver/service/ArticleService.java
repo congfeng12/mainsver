@@ -111,7 +111,7 @@ public class ArticleService {
         Map<String, Object> map = new HashMap<>();
         // 初始化返回内容
         Article article = articleMapper.selectById(id);
-        article.setContent(article.getContent().replaceAll("data-original", "src").replaceAll("data-height","height").replaceAll("data-width","width"));
+        article.setContent(article.getContent().replaceAll("data-original", "src").replaceAll("data-width","width"));
         // 组装返回信息内容
         map.put("RTCODE", "success");
         map.put("RTMSG", "获取帖子成功！");
